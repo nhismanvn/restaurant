@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Slide Form</title>
+</head>
+<body>
+<h1>Slide Form</h1>
+<form th:action="@{/admin/slides/add}" th:object="${slide}" method="post">
+    <div>
+        <label>Title</label>
+        <input type="text" th:field="*{title}" />
+    </div>
+    <div>
+        <label>Description</label>
+        <input type="text" th:field="*{description}" />
+    </div>
+    <div>
+        <label>Image URL</label>
+        <input type="text" th:field="*{imageUrl}" />
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+</body>
+</html>

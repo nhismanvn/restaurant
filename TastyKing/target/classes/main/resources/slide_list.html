@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Slide List</title>
+    <link rel="stylesheet" type="text/css" href="/css/admin.css"/>
+</head>
+<body>
+<h1>Slides</h1>
+<a th:href="@{/admin/slides/add}">Add New Slide</a>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image URL</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="slide : ${slides}">
+        <td th:text="${slide.title}"></td>
+        <td th:text="${slide.description}"></td>
+        <td th:text="${slide.imageUrl}"></td>
+        <td>
+            <a th:href="@{/admin/slides/edit/{id}(id=${slide.id})}">Edit</a>
+            <a th:href="@{/admin/slides/delete/{id}(id=${slide.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
